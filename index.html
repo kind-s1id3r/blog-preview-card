@@ -1,34 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Blog preview card</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --yellow-color: #F4D04E;
+      --white-color: #FFFFFF;
+      --gray-950: #111111;
+      --gray-500: #6B6B6B;
+      --spacing-50: 4px;
+      --spacing-100: 8px;
+      --spacing-150: 12px;
+      --spacing-300: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @font-face {
+      font-family: "Figtree";
+      src: url("assets/fonts/static/Figtree-ExtraBold.ttf");
+      font-weight: bold;
+    }
+
+    @font-face {
+      font-family: "Figtree";
+      src: url("assets/fonts/static/Figtree-Medium.ttf");
+    }
+
+    body {
+      background-color: var(--yellow-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 var(--spacing-300);
+    }
+
+    main {
+      background-color: var(--white-color);
+      padding: var(--spacing-300);
+      max-width: 384px;
+      flex-grow: 1;
+      border-radius: 20px;
+      outline: 1px solid var(--gray-950);
+      outline-offset: -1px;
+      box-shadow: 8px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    div {
+      height: 200px;
+    }
+
+    .image {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    p,
+    h1 {
+      color: var(--gray-950);
+      font-family: "Figtree";
+      line-height: 150%;
+      letter-spacing: 0;
+    }
+
+    .text-bold {
+      font-weight: bold;
+    }
+
+    .text-var-1 {
+      font-size: clamp(12px, 3.2vw, 14px);
+    }
+
+    .text-var-2 {
+      font-size: clamp(14px, 3.7vw, 16px);
+      color: var(--gray-500);
+    }
+
+    .text-var-3 {
+      font-size: clamp(20px, 5.3vw, 24px);
+    }
+
+    .text-static {
+      font-size: 14px;
+    }
+
+    .category {
+      background-color: var(--yellow-color);
+      padding: var(--spacing-50) var(--spacing-150);
+      border-radius: 4px;
+    }
+
+    .mt-24 {
+      margin-top: var(--spacing-300);
+    }
+
+    .mt-16 {
+      margin-top: var(--spacing-150);
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-150)
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+    }
+
+    h1:hover {
+      color: var(--yellow-color);
+      cursor: pointer;
+    }
   </style>
 </head>
+
 <body>
+  <main>
+    <div>
+      <img class="image" src="assets/images/illustration-article.svg" alt="Blog Image" />
+    </div>
 
-  Learning
+    <p class="category mt-24 text-bold text-var-1">Learning</p>
 
-  Published 21 Dec 2023
+    <p class="mt-16 text-var-1">Published <time datetime="2023-12-21">21 Dec 2023</time></p>
 
-  HTML & CSS foundations
+    <article>
+      <header class="mt-16">
+        <h1 class="text-var-3">HTML & CSS foundations</h1>
+      </header>
 
-  These languages are the backbone of every website, defining structure, content, and presentation.
+      <section class="mt-16">
+        <p class="text-var-2">
+          These languages are the backbone of every website, defining structure, content, and presentation.
+        </p>
+      </section>
 
-  Greg Hooper
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <footer class="mt-24">
+        <img class="avatar" src="assets/images/image-avatar.webp" alt="Avatar">
+
+        <p class="text-static text-bold">Greg Hooper</p>
+      </footer>
+    </article>
+  </main>
 </body>
+
 </html>
